@@ -2,9 +2,14 @@
 <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('InspireWeb') }}
-        </h2>
+        <div class="breeze-header">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('InspireWeb') }}
+            </h2>
+            <div class="new">
+                <a class="new-invoice" href="{{ route('create-product') }}">Nieuw Product</a>
+            </div>
+        </div>
     </x-slot>
 
     <div class="py-12">
@@ -16,6 +21,7 @@
                             <td><div>ID</div></td>
                             <td><div>Productnaam</div></td>
                             <td><div>Prijs</div></td>
+                            <td><div>Acties</div></td>
                         </tr>
                     @foreach ($products as $product)
                         <tr>

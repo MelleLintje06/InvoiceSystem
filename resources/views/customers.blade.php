@@ -6,7 +6,7 @@
                 {{ __('InspireWeb') }}
             </h2>
             <div class="new">
-                <a class="new-invoice" href="#">Nieuwe Klant</a>
+                <a class="new-invoice" href="#">Nieuw Bedrijf</a>
             </div>
         </div>
     </x-slot>

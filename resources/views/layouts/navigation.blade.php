@@ -22,7 +22,11 @@
                     </x-nav-link>
                     {{-- Customers --}}
                     <x-nav-link :href="route('customers')" :active="request()->routeIs('customers')">
-                        {{ __('Klanten') }}
+                        {{ __('Bedrijven') }}
+                    </x-nav-link>
+                    {{-- Contacts --}}
+                    <x-nav-link :href="route('contacts')" :active="request()->routeIs('contacts')">
+                        {{ __('Contacten') }}
                     </x-nav-link>
                     {{-- Invoices --}}
                     <x-nav-link :href="route('invoices')" :active="request()->routeIs('invoices')">
