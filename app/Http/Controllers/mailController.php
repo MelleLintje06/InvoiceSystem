@@ -56,6 +56,6 @@ class mailController extends Controller
             File::delete($file);
         }
 
-        return redirect('/invoices');
+        return redirect()->route('invoices');
     }
 }

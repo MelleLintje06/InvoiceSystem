@@ -173,6 +173,13 @@ body {
     color: white;
     background: darkred
 }
+.edit {
+    color: green;
+}
+.edit:hover {
+    color: white;
+    background-color: green;
+}
 .send {
     color: darkviolet;
 }
@@ -228,6 +235,12 @@ input[type=submit]:hover {
 }
 .invoice-form h4 {
     margin-top: 10px;
+}
+.invoice-form input[type="text"] {
+    width: 100%;
+}
+.invoice-form input[type="number"] {
+    width: 100%;
 }
 .beschrijving textarea {
     width: 100%;
@@ -451,4 +464,12 @@ input[type="submit"]:disabled {
     transform: var(--scale, scaleX(0));
     transition: transform 1s ease-in-out;
 }
-
+.icon-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.p-table tr:nth-child(even) {
+    background-color: lightgray;
+    border: none;
+}

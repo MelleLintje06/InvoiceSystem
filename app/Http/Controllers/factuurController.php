@@ -47,21 +47,42 @@ class factuurController extends Controller
         return view('invoices.create', compact('customers', 'contacts', 'products'));
     }
 
-    public function post() {
+    public function post(Request $request) {
+        // Factuur
+        $invoice = new Invoice;
+        $invoice->customer_id = $request['customers'];
+        $invoice->person_id = $request['contacts'];
+        $invoice->text = $request['description'];
+        $invoice->paid = 0;
+        $invoice->created_at = $request['datetime'];
+        $invoice->updated_at = $request['expiredate'];
+        $invoice->save();
+        // Factuur details
+        $i = 0;
+        foreach ($request['product'] as $product) {
+            $i_d = new Invoice_detail;
+            $i_d->invoice_id = $invoice->id;
+            $i_d->product_id = $product;
+            $i_d->quantity = $request['amount'][$i];
+            $i_d->discount = $request['sale'][$i];
+            $i_d->save();
+            $i = $i +1;
+        }
 
+        return redirect()->route('invoices');
     }
 
     public function finish($id) {
         $factuur = Invoice::findOrFail($id);
         $factuur->paid = 1;
         $factuur->update();
-        return redirect('/invoices');
+        return redirect()->route('invoices');
     }
 
     public function destroy(Request $request) {
         // First delete details before invoice to avoid errors
         Invoice_detail::where('invoice_id', $request->id)->delete();
         Invoice::where('id', $request->id)->first()->delete();
-        return redirect('/invoices');
+        return redirect()->route('invoices');
     }
 }

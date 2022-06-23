@@ -22,4 +22,9 @@ class dashboardController extends Controller
         $invoices = Invoice::get();
         return view('dashboard.dashboard', compact('tasks', 'customers', 'products', 'contacts', 'invoices'));
     }
+
+    public function settings() {
+        // Nog aanmaken
+        return;
+    }
 }
