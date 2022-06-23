@@ -20,6 +20,6 @@ class dashboardController extends Controller
         $products = Product::get();
         $contacts = Contact_person::get();
         $invoices = Invoice::get();
-        return view('dashboard', compact('tasks', 'customers', 'products', 'contacts', 'invoices'));
+        return view('dashboard.dashboard', compact('tasks', 'customers', 'products', 'contacts', 'invoices'));
     }
 }

@@ -12,7 +12,7 @@ class customerController extends Controller
 {
     public function index() {
         $customers = Customer::get();
-        return view('customers', compact('customers'));
+        return view('customers.customers', compact('customers'));
     }
 
     public function details($slug) {
