@@ -468,6 +468,8 @@ input[type="submit"]:disabled {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .p-table tr:nth-child(even) {
     background-color: lightgray;

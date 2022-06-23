@@ -10,7 +10,7 @@
     Met vriendelijke groeten,<br>
     <span style="font-style: italic;">Melle Linschoten</span><br>
 </p>
-<img src="{{ public_path('media/inspireweb.png') }}" alt="" width="275px" height="80px">
+<img src="https://inspireweb.nl/wp-content/uploads/2022/06/inspireweb.png" alt="" width="275px" height="80px">
 <br>
 <p style="font-style: italic;">
     Telefoon: <a href="tel:0615583771">+31(6) 15583771</a>

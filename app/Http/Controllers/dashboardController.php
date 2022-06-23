@@ -25,6 +25,6 @@ class dashboardController extends Controller
 
     public function settings() {
         // Nog aanmaken
-        return;
+        return view('dashboard.settings');
     }
 }

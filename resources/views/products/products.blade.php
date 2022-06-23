@@ -27,7 +27,7 @@
                             <td><div>€ {{ $product->price }},-</div></td>
                             <td class="icons">
                                 <div class="icon-container">
-                                <a href="#" style="padding-left: 35px;">
+                                <a href="{{ route('edit-product', ['id'=>$product->id]) }}" style="padding-left: 35px;">
                                     <span class="iconify icon edit" data-icon="bxs:edit"></span>
                                 </a>
                                 <a href="{{ route('destroy-product', ['id'=>$product->id]) }}">
