@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="./stylesheet.css">
-<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -107,9 +105,4 @@
         document.getElementById("previous").disabled = true;
         document.getElementById("next").disabled = true;
     }
-
-    // Yellow underline
-    window.onload = function(){
-        document.getElementById('action').style.setProperty("--scale", "scaleX(.1)");
-    };
 </script>

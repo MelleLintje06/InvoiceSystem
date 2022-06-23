@@ -437,8 +437,11 @@ input[type="submit"]:disabled {
     text-align: center;
     margin-bottom: 20px;
 }
-.db-header-1 span {
-    width: 300px;
+#action {
+    width: 100%;
+}
+.db-header-1 p span {
+    /* width: 100%; */
     padding: 0px 0px;
 }
 .db-header-1 span::after {

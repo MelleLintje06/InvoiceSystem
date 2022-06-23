@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="../stylesheet.css">
-<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
-<script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
 <x-app-layout>
     <x-slot name="header">
         <div class="breeze-header">
@@ -19,6 +16,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="content-wrap">
                         <div class="content-wrapper scroll">
+                            <h2 class="font-semibold text-xl text-gray-800 leading-tight db-header-1"><p><span id="action">Facturen</span></p></h2>
                             <table class="invoices">
                                 <tr>
                                     <td colspan="2">Factuurnummer</td>

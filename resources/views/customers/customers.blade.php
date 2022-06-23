@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="./stylesheet.css">
 <x-app-layout>
     <x-slot name="header">
         <div class="breeze-header">
@@ -17,6 +16,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="content-wrap">
                         <div class="content-wrapper">
+                            <h2 class="font-semibold text-xl text-gray-800 leading-tight db-header-1"><p><span id="action">Onze Klanten</span></p></h2>
                             <div class="grid">
                                 @foreach ($customers as $c)
                                 <a class="griditemlink" href="{{ route('customer-details', ['slug'=>$c->slug]) }}">

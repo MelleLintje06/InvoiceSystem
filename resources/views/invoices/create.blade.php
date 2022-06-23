@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="../stylesheet.css">
-<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
-<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <x-app-layout>
     <x-slot name="header">
         <div class="breeze-header">
