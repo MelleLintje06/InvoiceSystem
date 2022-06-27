@@ -31,7 +31,9 @@
                 <script>
                     // Yellow underline
                     window.onload = function(){
-                        document.getElementById('action').style.setProperty("--scale", "scaleX(.1)");
+                        if (document.querySelectorAll('#action').length !== 0) {
+                            document.getElementById('action').style.setProperty("--scale", "scaleX(.1)");
+                        }
                     };
                 </script>
             </header>

@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="http://localhost:8000/media/ezgif.com-gif-maker.png" style="width: 20%; margin-left: auto; margin-right: auto; margin-bottom: -20px;">
             </a>
         </x-slot>
 

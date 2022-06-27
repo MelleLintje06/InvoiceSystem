@@ -9,4 +9,5 @@ class Contact_person extends Model
 {
     use HasFactory;
     protected $table = 'contact_persons';
+    public $timestamps = false;
 }

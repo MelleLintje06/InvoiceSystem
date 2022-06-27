@@ -49,6 +49,8 @@ Route::get('/contacts', [contactController::class, 'index'])->middleware(['auth'
 Route::get('/contact/create', [contactController::class, 'create'])->middleware(['auth'])->name('create-contact');
 Route::get('/contact/edit', [contactController::class, 'edit'])->middleware(['auth'])->name('edit-contact');
 Route::get('/contact/remove', [contactController::class, 'destroy'])->middleware(['auth'])->name('destroy-contact');
+// POST
+Route::post('/contact/create', [contactController::class, 'post'])->middleware(['auth'])->name('post-contact');
 
 // Mail
 // GET
