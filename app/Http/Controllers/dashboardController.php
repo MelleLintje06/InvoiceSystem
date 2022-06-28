@@ -9,6 +9,7 @@ use App\Models\Invoice_detail;
 use App\Models\Product;
 use App\Models\Contact_person;
 use App\Models\Task;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
@@ -21,6 +22,11 @@ class dashboardController extends Controller
         $contacts = Contact_person::get();
         $invoices = Invoice::get();
         return view('dashboard.dashboard', compact('tasks', 'customers', 'products', 'contacts', 'invoices'));
+    }
+
+    public function staff() {
+        $users = User::get();
+        return view('dashboard.staff', compact('users'));
     }
 
     public function settings() {

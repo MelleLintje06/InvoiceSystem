@@ -59,6 +59,7 @@ Route::get('/invoice/mailto/', [mailController::class, 'index'])->middleware(['a
 // Dashboard
 // GET
 Route::get('/dashboard', [dashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/staff', [dashboardController::class, 'staff'])->middleware(['auth'])->name('staff');
 Route::get('/settings', [dashboardController::class, 'settings'])->middleware(['auth'])->name('settings');
 
 require __DIR__.'/auth.php';

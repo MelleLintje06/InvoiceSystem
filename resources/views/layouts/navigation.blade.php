@@ -51,7 +51,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('settings')">
+                        <x-dropdown-link :href="route('staff')">
                             {{ __('Medewerkers') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('settings')">
