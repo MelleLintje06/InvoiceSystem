@@ -19,13 +19,13 @@
                         <tr>
                             <td><div>Productnaam</div></td>
                             <td><div>Prijs</div></td>
-                            <td><div style="text-align: center;">Acties</div></td>
+                            <td><div>Acties</div></td>
                         </tr>
                     @foreach ($products as $product)
-                        <tr>
+                        <tr class="row">
                             <td><div>{{ $product->name }}</div></td>
                             <td><div>€ {{ $product->price }},-</div></td>
-                            <td class="icons">
+                            <td class="producticons">
                                 <div class="icon-container">
                                 <a href="{{ route('edit-product', ['id'=>$product->id]) }}" style="padding-left: 35px;">
                                     <span class="iconify icon edit" data-icon="bxs:edit"></span>
@@ -43,3 +43,17 @@
         </div>
     </div>
 </x-app-layout>
+<script>
+    const transitionGrid = () => {
+        let i = 0.2
+        document.querySelectorAll('.row').forEach(contact => {
+            contact.style.transitionDelay = `${i}s`;
+            contact.style.opacity = 1;
+            i = i + 0.2;
+        })
+    }
+    window.onload = () => {
+        document.getElementById('action').style.setProperty("--scale", "scaleX(.1)");
+        transitionGrid();
+    }
+</script>

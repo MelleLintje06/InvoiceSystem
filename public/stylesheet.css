@@ -210,6 +210,10 @@ input[type=submit]:hover {
     align-items: center;
     justify-content: left;
 }
+.row {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
 .row:hover .invoice {
     color: black;
 }
@@ -528,4 +532,21 @@ input[type="submit"]:disabled {
 .contactinfo p {
     display: flex;
     justify-content: space-between;
+}
+.product-row {
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+.p-table tr td:first-child {
+    width: 70%;
+}
+.p-table tr td:nth-child(2) {
+    width: 20%;
+}
+.p-table tr td:last-child {
+    width: 10%;
+}
+.producticons {
+    display: flex;
+    margin-left: 10px;
 }

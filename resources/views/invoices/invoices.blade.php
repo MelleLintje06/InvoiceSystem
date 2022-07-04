@@ -87,3 +87,17 @@
         </div>
     </div>
 </x-app-layout>
+<script>
+    const transitionGrid = () => {
+        let i = 0.2
+        document.querySelectorAll('.row').forEach(contact => {
+            contact.style.transitionDelay = `${i}s`;
+            contact.style.opacity = 1;
+            i = i + 0.2;
+        })
+    }
+    window.onload = () => {
+        document.getElementById('action').style.setProperty("--scale", "scaleX(.1)");
+        transitionGrid();
+    }
+</script>
