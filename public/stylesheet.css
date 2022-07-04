@@ -517,6 +517,8 @@ input[type="submit"]:disabled {
     margin-left: auto;
     margin-right: auto;
     height: auto;
+    object-fit: contain;
+    max-height: 470px;
 }
 .contactname {
     padding-bottom: 5px;

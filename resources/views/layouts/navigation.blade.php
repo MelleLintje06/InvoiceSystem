@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center" style="min-width: 150px;">
                     <a href="{{ route('dashboard') }}">
                         <img width="150px" src="http://localhost:8000/media/inspireweb.png" class="block h-10 w-auto fill-current text-gray-600"/>
                     </a>

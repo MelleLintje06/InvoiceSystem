@@ -14,7 +14,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <div class="content-wrapper">
+                    <div class="">
                         <form action="{{ route('update-contact') }}" method="POST" class="invoice-form">
                             @csrf
                             <input type="hidden" value="{{ $contact->id }}" name="id">
@@ -47,6 +47,18 @@
 
                                     @endforeach
                                 </select>
+                            </div>
+                            <div class="role">
+                                <h4>Rol binnen bedrijf</h4>
+                                <input type="text" class="" name="role" value="{{ $contact->role }}"></input>
+                            </div>
+                            <div class="email">
+                                <h4>Email</h4>
+                                <input type="text" class="" name="email" value="{{ $contact->email }}"></input>
+                            </div>
+                            <div class="phone">
+                                <h4>Telefoon</h4>
+                                <input type="text" class="" name="phone" value="{{ $contact->phone }}"></input>
                             </div>
                             <div style="margin-top: 20px">
                                 <input type="submit" value="Bewerken">

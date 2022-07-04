@@ -42,6 +42,18 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                <div class="role">
+                                    <h4>Rol binnen bedrijf</h4>
+                                    <input type="text" class="" name="role"></input>
+                                </div>
+                                <div class="email">
+                                    <h4>Email</h4>
+                                    <input type="text" class="" name="name"></input>
+                                </div>
+                                <div class="phone">
+                                    <h4>Telefoon</h4>
+                                    <input type="text" class="" name="phone"></input>
+                                </div>
                                 <div style="margin-top: 20px">
                                     <input type="submit" value="Toevoegen">
                                 <div>

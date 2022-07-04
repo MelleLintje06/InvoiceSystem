@@ -32,6 +32,9 @@ class contactController extends Controller
         $contact->firstname = $request->input('f-name');
         $contact->lastname = $request->input('l-name');
         $contact->company_id = $request->input('company');
+        $contact->role = $request->input('role');
+        $contact->email = $request->input('email');
+        $contact->phone = $request->input('phone');
         $contact->save();
 
         return redirect()->route('contacts');
@@ -49,6 +52,9 @@ class contactController extends Controller
         $contact->firstname = $request->input('f-name');
         $contact->lastname = $request->input('l-name');
         $contact->company_id = $request->input('company');
+        $contact->role = $request->input('role');
+        $contact->phone = $request->input('phone');
+        $contact->email = $request->input('email');
         $contact->update();
 
         return redirect()->route('contacts');
