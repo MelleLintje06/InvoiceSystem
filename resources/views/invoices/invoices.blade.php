@@ -61,7 +61,7 @@
                                                     </a>
                                                 @endif
                                                 {{-- Delete --}}
-                                                <a href="/invoice/delete?id={{ $i->id }}">
+                                                <a href="/invoice/remove?id={{ $i->id }}">
                                                     <span class="iconify icon delete" data-icon="akar-icons:circle-x-fill"></span>
                                                 </a>
                                                 {{-- Finish --}}

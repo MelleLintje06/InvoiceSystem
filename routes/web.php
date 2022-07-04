@@ -32,6 +32,7 @@ Route::get('/invoice/remove', [factuurController::class, 'destroy'])->middleware
 Route::post('/invoice/post', [factuurController::class, 'post'])->middleware(['auth'])->name('post-invoice');
 Route::post('/invoice/customer/post', [customerController::class, 'post'])->middleware(['auth'])->name('post-invoice-customer');
 Route::post('/invoice/finish/{id}', [factuurController::class, 'finish'])->middleware(['auth'])->name('finish-invoice');
+Route::post('/invoices/xml', [factuurController::class, 'post_xml'])->middleware(['auth'])->name('post-xml-invoices');
 
 // Products
 // GET
@@ -46,11 +47,13 @@ Route::post('/product/edit', [productController::class, 'update'])->middleware([
 // Contacts
 // GET
 Route::get('/contacts', [contactController::class, 'index'])->middleware(['auth'])->name('contacts');
+Route::get('/contact/view', [contactController::class, 'details'])->middleware(['auth'])->name('contact');
 Route::get('/contact/create', [contactController::class, 'create'])->middleware(['auth'])->name('create-contact');
 Route::get('/contact/edit', [contactController::class, 'edit'])->middleware(['auth'])->name('edit-contact');
 Route::get('/contact/remove', [contactController::class, 'destroy'])->middleware(['auth'])->name('destroy-contact');
 // POST
 Route::post('/contact/create', [contactController::class, 'post'])->middleware(['auth'])->name('post-contact');
+Route::post('/contact/edit', [contactController::class, 'update'])->middleware(['auth'])->name('update-contact');
 
 // Mail
 // GET

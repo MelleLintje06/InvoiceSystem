@@ -5,7 +5,11 @@
                 {{ __('InspireWeb') }}
             </h2>
             <div class="new">
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight">Nieuwe Factuur</h2>
+                <form id="xmlform" action="/invoices/xml" enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <span style="margin-right: 20px;">XML inlezen:</span>
+                    <input name="xml" accept="text/xml" type="file" onchange="SubmitXML()">
+                </form>
             </div>
         </div>
     </x-slot>
@@ -137,7 +141,9 @@
                 contact.style.display = 'block'
             }
         })
-        document.getElementById(firstcontact[0]).selected = true;
+        if (firstcontact.length > 0) {
+            document.getElementById(firstcontact[0]).selected = true;
+        }
         firstcontact = [];
     }
     getCurrentCompany();
@@ -255,5 +261,9 @@
         var text = value.toLowerCase();
         text = text.replace(/\s+/g, '-');
         document.getElementById('slug').value = text;
+    }
+
+    const SubmitXML = () => {
+        document.getElementById('xmlform').submit();
     }
 </script>

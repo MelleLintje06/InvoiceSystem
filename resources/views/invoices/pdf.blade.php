@@ -176,7 +176,7 @@
                     <td>{{ $number }}</td>
                     @foreach ($products as $product)
                         @if ($detail->product_id == $product->id)
-                            <td>{{ $product->name }}</td>
+                            <td style="min-width: 300px">{{ $product->name }}</td>
                         @endif
                     @endforeach
                     <td>{{ $detail->quantity }}</td>
@@ -246,7 +246,7 @@
         <p style="text-align: right">Valuta EUR</p>
     </div>
     <div class="eindtekst">
-        Powered by <a href="https://inspireweb.nl/">InspireWeb</a> 2022
+        Powered by <a href="https://inspireweb.nl/">InspireWeb</a> @php echo date("Y") @endphp
     </div>
 </body>
 </html>

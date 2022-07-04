@@ -19,28 +19,30 @@
                         <div class="content-wrapper">
                             <div class="grid contacts">
                                 @foreach ($contacts as $contact)
-                                    <div class="contact">
-                                        <div class="contact-name">
-                                            <div>
-                                                @if ($contact->gender == 'dhr')
-                                                    <span class="iconify" data-icon="et:profile-male"></span>
-                                                @else
-                                                    <span class="iconify" data-icon="et:profile-female"></span>
-                                                @endif
+                                    <a href="{{ route('contact', ['id'=>$contact->id]) }}" class="contact">
+                                        <div>
+                                            <div class="contact-name">
+                                                <div>
+                                                    @if ($contact->gender == 'dhr')
+                                                        <span class="iconify" data-icon="et:profile-male"></span>
+                                                    @else
+                                                        <span class="iconify" data-icon="et:profile-female"></span>
+                                                    @endif
+                                                </div>
+                                                <div>
+                                                    <p>{{ $contact->firstname }} {{ $contact->lastname }}</p>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <p>{{ $contact->firstname }} {{ $contact->lastname }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="contact-company">
-                                            @foreach ($companies as $company)
-                                                @if ($company->id == $contact->company_id)
-                                                    <p>{{ $company->name }}</p>
-                                                @endif
-                                            @endforeach
+                                            <div class="contact-company">
+                                                @foreach ($companies as $company)
+                                                    @if ($company->id == $contact->company_id)
+                                                        <p>{{ $company->name }}</p>
+                                                    @endif
+                                                @endforeach
 
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 @endforeach
                             </div>
                         </div>
@@ -50,3 +52,19 @@
         </div>
     </div>
 </x-app-layout>
+<script>
+    const transitionGrid = () => {
+        let i = 0.2
+        document.querySelectorAll('.contact').forEach(contact => {
+            contact.style.transitionDelay = `${i}s`;
+            contact.style.opacity = 1;
+            i = i + 0.2;
+        })
+    }
+    window.onload = () => {
+        document.getElementById('action').style.setProperty("--scale", "scaleX(.1)");
+        transitionGrid();
+    }
+
+
+</script>

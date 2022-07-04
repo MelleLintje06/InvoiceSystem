@@ -226,6 +226,10 @@ input[type=submit]:hover {
     border-radius: 5px;
     padding: 5px 10px;
     box-shadow: 0px 0px 5px black;
+    transition: background .2s ease-in-out;
+}
+.new-invoice:hover {
+    background: #0e3268;
 }
 .invoice-form {
     width: 100%;
@@ -479,6 +483,8 @@ input[type="submit"]:disabled {
     background-color: #eaeaea;
     margin: 5px;
     padding: 20px;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
 }
 .contact-name {
     display: flex;
@@ -499,4 +505,25 @@ input[type="submit"]:disabled {
 }
 .c-name div {
     width: 50%;
+}
+.contactdetails {
+    display: flex;
+}
+.contactdetails div {
+    width: 50%;
+}
+.contactdetails .contactimg img {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+.contactname {
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #0e3268;
+}
+.contactinfo p {
+    display: flex;
+    justify-content: space-between;
 }

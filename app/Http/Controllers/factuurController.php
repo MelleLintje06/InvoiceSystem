@@ -72,6 +72,35 @@ class factuurController extends Controller
         return redirect()->route('invoices');
     }
 
+    public function post_xml(Request $request) {
+        // Leest XML file
+        if ($request->xml !== null) {
+            $json = json_encode(simplexml_load_string(file_get_contents($request->xml)));
+            $phpArray = json_decode($json, true);
+
+            foreach ($phpArray as $item) {
+                $invoice = new Invoice;
+                $invoice->customer_id = $item['CompanyID'];
+                $invoice->person_id = $item['ContactID'];
+                $invoice->text = $item['Text'];
+                $invoice->paid = 0;
+                $invoice->created_at = $item['CreatedAt'];
+                $invoice->updated_at = $item['UpdatedAt'];
+                $invoice->save();
+
+                foreach ($item['Details']['Detail'] as $item_detail) {
+                    $detail = new Invoice_detail;
+                    $detail->invoice_id = $invoice->id;
+                    $detail->product_id = $item_detail['ProductID'];
+                    $detail->quantity = $item_detail['Quantity'];
+                    $detail->discount = $item_detail['Discount'];
+                    $detail->save();
+                }
+            }
+        }
+        return redirect()->route('invoices');
+    }
+
     public function finish($id) {
         $factuur = Invoice::findOrFail($id);
         $factuur->paid = 1;
