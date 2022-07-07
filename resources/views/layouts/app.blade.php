@@ -12,7 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="../stylesheet.css">
+        <link rel="stylesheet" href="http://localhost:8000/stylesheet.css">
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>

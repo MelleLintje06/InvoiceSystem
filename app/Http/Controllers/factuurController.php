@@ -21,6 +21,7 @@ class factuurController extends Controller
     public function index() {
         $invoices = Invoice::orderBy('id', 'DESC')->get();
         $customers = Customer::get();
+        // dd($invoices);
         return view('invoices.invoices', compact('invoices', 'customers'));
     }
 

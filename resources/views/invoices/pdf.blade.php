@@ -93,6 +93,15 @@
         float: right;
         margin-top: -35px;
     }
+    .page-num {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: darkgray;
+    }
+    .page-num span::after {
+        content: counter(page);
+    }
 </style>
 <body>
     @php
@@ -102,6 +111,13 @@
         $bedrag = 0;
         $number = 1;
     @endphp
+    {{--
+        Set following amounts
+        - BTW
+        - Total Discount price
+        - Subtotal
+        - Total price
+    --}}
     @foreach ($details as $detail)
         @foreach ($products as $product)
             @if ($detail->product_id == $product->id)
@@ -184,13 +200,13 @@
                         @if ($detail->product_id == $product->id)
                             <td>€ {{ $product->price }},-</td>
                             @php
-                                $prijs = $product->price * ((100 - $detail->discount) / 100) * 1.21 * $detail->quantity;
+                                $price = $product->price * ((100 - $detail->discount) / 100) * 1.21 * $detail->quantity;
                             @endphp
                         @endif
                     @endforeach
                     <td>21%</td>
                     <td>{{ $detail->discount }}%</td>
-                    <td>€ {{ number_format($prijs, 2) }}</td>
+                    <td>€ {{ number_format($price, 2) }}</td>
                 </tr>
                 @php
                     $number = $number +1;
@@ -247,6 +263,9 @@
     </div>
     <div class="eindtekst">
         Powered by <a href="https://inspireweb.nl/">InspireWeb</a> @php echo date("Y") @endphp
+    </div>
+    <div class="page-num">
+        <span></span>
     </div>
 </body>
 </html>

@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="email">
                                     <h4>Email</h4>
-                                    <input type="text" class="" name="name"></input>
+                                    <input type="text" class="" name="email"></input>
                                 </div>
                                 <div class="phone">
                                     <h4>Telefoon</h4>

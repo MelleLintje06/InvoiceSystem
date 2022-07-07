@@ -34,11 +34,11 @@ class mailController extends Controller
 
         // Set PDF
         $pdf = PDF::loadView('invoices.pdf', compact('invoices', 'details', 'customer', 'products'));
-        Storage::put('public/invoices/Factuur_'.$invoice->id . '.pdf', $pdf->output());
+        Storage::put('public/invoices/invoice_'.$invoice->id . '.pdf', $pdf->output());
 
-        // Pakt de PDF file
+        // // Pakt de PDF file
         $id = $invoice->id;
-        $files = ["storage/invoices/Factuur_$invoice->id.pdf"];
+        $files = ["storage/invoices/invoice_$invoice->id.pdf"];
         $data = array('gender'=>$person->gender, 'firstname'=>$person->firstname, 'name'=>$customer->name, 'id'=>$invoice->id);
         $email = $customer->email;
 

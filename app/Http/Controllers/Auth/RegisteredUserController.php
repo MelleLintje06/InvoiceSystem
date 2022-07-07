@@ -20,8 +20,8 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        abort(404);
-        // return view('auth.register');
+        // abort(404);
+        return view('auth.register');
     }
 
     /**
